@@ -1,0 +1,4 @@
+.vscode
+*.o
+*/*.o
+ex00/braiinzz

@@ -1,6 +1,6 @@
 SRC=$(shell find . -name \*.cpp -type f -print)
 OBJ=$(patsubst %.cpp, %.o,$(SRC))
-NAME=hi_this_is_brain
+NAME=hi_this_is_brains
 FLAGS=-Wall -Werror -Wextra -std=c++98
 
 all:

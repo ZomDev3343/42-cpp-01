@@ -6,7 +6,7 @@
 /*   By: tohma <tohma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 16:04:53 by tohma             #+#    #+#             */
-/*   Updated: 2024/05/03 12:36:05 by tohma            ###   ########.fr       */
+/*   Updated: 2024/05/03 12:43:12 by tohma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 
 Harl::Harl(void)
 {
-	this->_funcs[0].name = "DEBUG";
-	this->_funcs[0].f = &Harl::debug;
-	this->_funcs[1].name = "INFO";
-	this->_funcs[1].f = &Harl::info;
-	this->_funcs[2].name = "WARNING";
-	this->_funcs[2].f = &Harl::warning;
-	this->_funcs[3].name = "ERROR";
-	this->_funcs[3].f = &Harl::error;
 }
 
 void Harl::debug(void)
@@ -44,15 +36,16 @@ void Harl::error(void)
 	std::cout << "[ERROR] This is unacceptable! I want to speak to the manager now" << std::endl; 
 }
 
-void Harl::complain(std::string level)
+int Harl::getDebugLevel(std::string level)
 {
-	bool levelFound = false;
-	for (int i = 0; i < 4; i++)
-	{
-		if (this->_funcs[i].name == level || levelFound)
-		{
-			(this->*_funcs[i].f)();
-			levelFound = true;
-		}
-	}
+	if (level == "DEBUG")
+		return (0);
+	else if (level == "INFO")
+		return (1);
+	else if (level == "WARNING")
+		return (2);
+	else if (level == "ERROR")
+		return (3);
+	else
+		return (-1);
 }

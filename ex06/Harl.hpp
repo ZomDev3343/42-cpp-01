@@ -6,7 +6,7 @@
 /*   By: tohma <tohma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 16:04:34 by tohma             #+#    #+#             */
-/*   Updated: 2024/05/03 12:29:00 by tohma            ###   ########.fr       */
+/*   Updated: 2024/05/03 12:43:06 by tohma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,13 @@
 
 class Harl
 {
-	private:
-		struct s_funcs
-		{
-			std::string name;
-			void (Harl::*f)(void);
-		};
-		struct s_funcs _funcs[4];
+	public:
+		Harl(void);
 		void debug(void);
 		void info(void);
 		void warning(void);
 		void error(void);
-	public:
-		Harl(void);
-		void complain(std::string level);
+		int getDebugLevel(std::string level);
 };
-
-
 
 #endif

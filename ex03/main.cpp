@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tohma <tohma@student.42.fr>                +#+  +:+       +#+        */
+/*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 14:16:42 by truello           #+#    #+#             */
-/*   Updated: 2024/04/30 22:01:44 by tohma            ###   ########.fr       */
+/*   Updated: 2024/05/16 14:18:52 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,10 @@ int main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
+	HumanB barbare("Conan");
+	Weapon hammer("Hammer");
+	barbare.attack();
+	barbare.set_weapon(hammer);
+	barbare.attack();
 	return 0;
 }

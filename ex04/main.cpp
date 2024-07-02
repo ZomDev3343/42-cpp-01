@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tohma <tohma@student.42.fr>                +#+  +:+       +#+        */
+/*   By: truello <truello@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 23:41:23 by tohma             #+#    #+#             */
-/*   Updated: 2024/05/01 15:49:17 by tohma            ###   ########.fr       */
+/*   Updated: 2024/07/02 13:28:12 by truello          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ int main(int ac, char **av)
 		std::ofstream	output_file;
 
 		input_file.open(av[1]);
+		if (av[2][0] == '\0' || av[3][0] == '\0')
+		{
+			std::cout << "Invalid replacement or string to replace" << std::endl;
+			return (1);
+		}
 		if (input_file.is_open())
 		{
 			while (std::getline(input_file, line))
@@ -61,7 +66,7 @@ int main(int ac, char **av)
 		}
 		else
 			std::cerr << "Error while opening the input file !" << std::endl;
-		
+
 	}
 	else
 		std::cout << "Usage: <filename> <str_to_replace> <replacement>" << std::endl;
